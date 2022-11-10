@@ -156,19 +156,19 @@ while(Raylib.WindowShouldClose() == false && phase == 1){  //Phase 2
                             choises.Add(3);
                             choice = false;
                         }
-                        if(temp3 > choiceWidth*2 - choiceWidth && temp3 < choiceWidth*2 + choiceWidth){
+                        if(temp3 > choiceX*2 - choiceWidth && temp3 < choiceX*2 + choiceWidth){
                             choises.Add(4);
                             choice = false;
                         }
-                        if(temp3 > choiceWidth*3 - choiceWidth && temp3 < choiceWidth*3 + choiceWidth){
+                        if(temp3 > choiceX*3 - choiceWidth && temp3 < choiceX*3 + choiceWidth){
                             choises.Add(5);
                             choice = false;
                         }
-                        if(temp3 > choiceWidth*4 - choiceWidth && temp3 < choiceWidth*4 + choiceWidth){
+                        if(temp3 > choiceX*4 - choiceWidth && temp3 < choiceX*4 + choiceWidth){
                             choises.Add(6);
                             choice = false;
                         }
-                        if(temp3 > choiceWidth*5 - choiceWidth && temp3 < choiceWidth*5 + choiceWidth){
+                        if(temp3 > choiceX*5 - choiceWidth && temp3 < choiceX*5 + choiceWidth){
                             choises.Add(7);
                             choice = false;
                         }
