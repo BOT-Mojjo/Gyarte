@@ -30,8 +30,27 @@ Raylib.SetConfigFlags(ConfigFlags.FLAG_WINDOW_RESIZABLE);
 Raylib.InitWindow(1280,720,"test2");
 Raylib.SetTargetFPS(tFPS);
 
+while(Raylib.WindowShouldClose() == false && phase == 0){
+    int textsize = Raylib.GetScreenHeight()/30;
+    Raylib.BeginDrawing();
+    Raylib.ClearBackground(Color.BLACK);
+
+    Raylib.DrawText("When the program starts it will wait untill the user presses M1 to indicate they are ready.", 20, 20+(textsize*0), textsize, Color.WHITE);
+    Raylib.DrawText("When they have, the program will wait 3-5 seconds and then the screen will flash white ", 20, 20+(textsize*1), textsize, Color.WHITE);
+    Raylib.DrawText("and the user should press M1 as fast as they can. This will repeat 10 times.", 20, 20+(textsize*2), textsize, Color.WHITE);
+    Raylib.DrawText("After which the program will wait for the user to be ready, again by wating for a M1 input.", 20, 20+(textsize*4), textsize, Color.WHITE);
+    Raylib.DrawText("Then it will briefly flash a shape in the middle of the screen", 20, 20+(textsize*5), textsize, Color.WHITE);
+    Raylib.DrawText("which the user will then have to point out in a lineup of different shapes:", 20, 20+(textsize*6), textsize, Color.WHITE);
+    Raylib.DrawText("a triangle, a square, a pentagon, a hexagon, and a circle, by clicking on them.", 20, 20+(textsize*7), textsize, Color.WHITE);
+    Raylib.DrawText("This will repeat until both the colorValue difference and the time it flashes on screen ", 20, 20+(textsize*8), textsize, Color.WHITE);
+    Raylib.DrawText("has reached near-zero.", 20, 20+(textsize*9), textsize, Color.WHITE);
+    Raylib.DrawText("Press Mouse Button 1, M1, to start.", 20, 20+(textsize*11), textsize, Color.WHITE);
+
+    Raylib.EndDrawing();
+}
+
 Stopwatch.Start();
-while(Raylib.WindowShouldClose() == false && phase == 0){  //Phase 1, e.i. testing the reaktion time of the subject.
+while(Raylib.WindowShouldClose() == false && phase == 1){  //Phase 1, e.i. testing the reaction time of the subject.
     Raylib.BeginDrawing();                          //Frame clear setup
     Raylib.ClearBackground(Color.BLACK);
     if(!choice){
@@ -78,7 +97,7 @@ while(Raylib.WindowShouldClose() == false && phase == 0){  //Phase 1, e.i. testi
 
     if (times.Count == 20){ //TODO MAKE 20 LATER
         Raylib.ClearBackground(Color.BLACK);
-        phase = 1;
+        phase = 2;
     }
     
     Raylib.EndDrawing();
@@ -100,7 +119,7 @@ List<int> choises = new List<int>();
 List<Color> color = new List<Color>();
 vectorCenter.X = (Raylib.GetScreenWidth()/2)-50;
 vectorCenter.Y = (Raylib.GetScreenHeight()/2)-50;
-while(Raylib.WindowShouldClose() == false && phase == 1){  //Phase 2 
+while(Raylib.WindowShouldClose() == false && phase == 2){  //Phase 2 
     Raylib.BeginDrawing();
     Raylib.ClearBackground(background);
     
@@ -147,7 +166,7 @@ while(Raylib.WindowShouldClose() == false && phase == 1){  //Phase 2
                             Raylib.DrawPoly(tempVector, i, Raylib.GetScreenWidth()/20, 0, Color.WHITE);
                         }
                     }
-                    Raylib.DrawText(Raylib.GetMouseX().ToString(), 0, 20, 15, Color.GREEN);
+                    // Raylib.DrawText(Raylib.GetMouseX().ToString(), 0, 20, 15, Color.GREEN);
                     if(Raylib.IsMouseButtonDown(MouseButton.MOUSE_LEFT_BUTTON)){
                         int temp3 = Raylib.GetMouseX();
                         int choiceX = (Raylib.GetScreenWidth()/6);
