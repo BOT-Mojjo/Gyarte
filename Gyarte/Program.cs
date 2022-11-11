@@ -46,6 +46,8 @@ while(Raylib.WindowShouldClose() == false && phase == 0){
     Raylib.DrawText("has reached near-zero.", 20, 20+(textsize*9), textsize, Color.WHITE);
     Raylib.DrawText("Press Mouse Button 1, M1, to start.", 20, 20+(textsize*11), textsize, Color.WHITE);
 
+    if(Raylib.IsMouseButtonPressed(MouseButton.MOUSE_BUTTON_LEFT)) phase++;
+
     Raylib.EndDrawing();
 }
 
