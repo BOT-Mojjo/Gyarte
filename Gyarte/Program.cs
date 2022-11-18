@@ -234,7 +234,11 @@ foreach(Color temp in color){
     tempColorList.Add(tempII);
 }
 
-Teste.Color = tempColorList;
+foreach((int, int, int, int) value in tempColorList){ //reduce redundence in output Json file
+    Teste.Color.Add(value.Item1);
+}
+
+// Teste.Color = tempColorList;
 var options = new JsonSerializerOptions
 {
     IncludeFields = true,
