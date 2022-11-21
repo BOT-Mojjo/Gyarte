@@ -10,5 +10,8 @@ public class subject{
     public List<double> PreReactionTimes { get; set; } //phase 1 reactiontime, 
     public List<double> PostReactionTimes {get; set; } //time given to the subject to react?
     public List<int> Choises { get; set; }
-    public List<int> Color { get; set; } //in sets of 2, [0] = first foreground color, [1] = first background color, [n] = foreground color, [n+1] background color for that round.
+    public int LengthOfTest { get; set; }
+    // public List<int> Color { get; set; } //in sets of 2, [0] = first foreground color, [1] = first background color, [n] = foreground color, [n+1] background color for that round.
+    //actually redunant, we get the same pattern everytime, just apply it to the amount of times done lmao
+
 }

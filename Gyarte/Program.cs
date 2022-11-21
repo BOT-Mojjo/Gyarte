@@ -228,15 +228,16 @@ Teste.AvgReactionTime = avgReactionTime;
 Teste.PreReactionTimes = times;
 Teste.PostReactionTimes = timeGiven;
 Teste.Choises = choises;
+Teste.LengthOfTest = color.Count;
 List<(int, int, int, int)> tempColorList = new List<(int, int, int, int)>();
 foreach(Color temp in color){
     (int, int, int, int) tempII = (temp.r, temp.g, temp.b, temp.a); 
     tempColorList.Add(tempII);
 }
 
-foreach((int, int, int, int) value in tempColorList){ //reduce redundence in output Json file
-    Teste.Color.Add(value.Item1);
-}
+// foreach((int, int, int, int) value in tempColorList){ //reduce redundence in output Json file
+//     Teste.Color.Add(value.Item1);
+// }
 
 // Teste.Color = tempColorList;
 var options = new JsonSerializerOptions
